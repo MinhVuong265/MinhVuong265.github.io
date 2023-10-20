@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0">
+    <title>M.O.Y Store</title>
+    <link rel="icon" href="img\378212982_297398756264984_6552689927202162591_n.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Angkor&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/thanhtoan.css">
+    <link rel="stylesheet" href="css/MainPage.css">
+    <!-- js -->
+    <script src="js/sanpham.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/thanhtoan.js"></script>
+
+</head>
+
+<body>
+    <div class="header">
+        <div id="logo">
+            <a href="MainPage.html"><img src="img\Logo2.png" style="width:150px; height: 85px;"></a>
+            <p>
+                <a href="MainPage.html" style="color: black;">M.O.Y STORE</a>
+            </p>
+        </div>
+        <div id="menu">
+            <ul>
+                <li><a href="MainPage.html">Trang chủ</a></li>
+                <li><a href="sanpham.html" style="padding-bottom: 30px;">Danh mục sản phẩm
+                        <i class="fa fa-angle-down" style="font-size:18px"></i></a>
+                    <ul class="sub-menu">
+                        <li><a href="AoKhoac.html">Áo khoác</a></li>
+                        <li><a href="AoPhong.html">Áo phông</a></li>
+                        <li><a href="Vay.html">Váy/Chân váy</a></li>
+                        <li><a href="Quan.html">Quần</a></li>
+                        <li><a href="PhuKien.html">Phụ Kiện</a></li>
+                    </ul>
+                </li>
+                <li><a href="AboutPage.html">Giới thiệu</a></li>
+                <li><a target="_blank" href="ContactPage.html">Liên hệ</a></li>
+            </ul>
+        </div>
+        <div id="account">
+            <ul>
+                <li><a href="LoginPage.html">Đăng nhập</a></li>
+                <li><a href="SigninPage.html">Đăng kí</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="body">
+        <div class="body-contain">
+            <h1>Thanh toán</h1>
+            <script>
+                var list_products = getListProducts() || list_products;
+                    nameProduct = window.location.href.split('?')[1];
+                    nameProduct = nameProduct.split('-').join(' ');
+                    nameProduct = decodeURIComponent(nameProduct);
+
+                for (var p of list_products) {
+                    
+                    // var p = list_products[i];
+                    if(p.name == nameProduct){
+                        document.title = p.name + ' - M.O.Y Store | Thanh toán';
+                        var product = new Products(p.masp, p.img, p.name, p.quantity, p.price, p.detail);
+                        var div = document.getElementsByClassName("body-contain")
+                        div.innerHTML = newDiv(product)
+                    }    
+                }
+            </script>
+           
+            <div class="bill">
+               
+                <div class="bill-contain">
+                    <h3>TẠM TÍNH</h3>
+                    <ul>
+                        <li>Số lượng<p id="soluong">1</p>
+                        </li>
+                        <li>Tạm tính<p id="tamtinh"></p>
+                        </li>
+                        <li>Phí vận chuyển<p>30.000</p>
+                        </li>
+                    </ul>
+                    <div id="tong_gia">Tổng cộng <p id="sum"></p>
+                    </div>
+                </div>
+                 <script>
+                    var price =document.getElementById("tamtinh");
+                    for (var p of list_products) {
+                    if(p.name == nameProduct){
+                        var product = new Products(p.masp, p.img, p.name, p.quantity, p.price, p.detail);
+                        price.innerHTML = p.price
+                    }
+                    }
+                    
+                </script>
+            </div>
+
+
+            <div class="thong-tin">
+                <div class="thong-tin-contain">
+                    <h4><i class="fa fa-map-marker" style="font-size:24px; margin-right: 5px;"></i>Thông tin giao hàng</h4>
+                    <form onsubmit="return getInfo(this)" target="_blank">
+                        <input required name="ho" type="text" placeholder="Họ*">
+                        <input required name="ten" type="text" placeholder="Tên*">
+                        <input required name="sdt" type="number" placeholder="Số điện thoại*">
+                        <input name="gmail" placeholder="Gmail">
+                        <input required name="thanhpho" type="text" placeholder="Tỉnh/Thành phố*">
+                        <input required name="quan_huyen" type="text" placeholder="Quận/Huyện*">
+                        <input required name="phuong_xa" type="text" placeholder="Phường/Xã*">
+                        <input required name="so_nha" type="text" placeholder="Số nhà, đường*">
+                        <textarea placeholder="Ghi chú đơn hàng"></textarea>
+                        <button type="submit">Gửi thông tin</button>
+                    </form>
+                </div>
+            </div>
+            <div class="chuyen-khoan" style="display: block;">
+                <div class="chuyen-khoan-contain">
+                    <img src="img\thanhtoan.jpg">
+                    <div class="huong-dan">
+                        <p>Thông tin tài khoản: TRUONG MINH VUONG, STK: 260705042202, MB Bank</p>
+                        <p>Chuyển khoản theo cú pháp: Họ tên + Số điện thoại + Tên sản phẩm</p>
+                        <p>M.O.Y Store xin chân thành cảm ơn</p>
+                    </div> 
+                </div>
+                
+                
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

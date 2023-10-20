@@ -1,0 +1,178 @@
+.body-contain{
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+    position: absolute;
+    top:150px;
+    width: 100%;
+}
+
+.product-contain{
+    display: flex;
+    position: relative;
+    background-color: rgb(187, 187, 187);
+    width: 100%;
+    height: 550px;
+    border: 2px solid rgb(76, 76, 76);
+    border-radius:5px ;
+}
+
+.product-contain img{
+    max-width: 400px;
+    max-height: 400px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.product-contain ul{
+    display: block;
+    height: fit-content;
+    width: 100%;
+    line-height: 26px;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+#buy-btn{
+    cursor: pointer;
+    position:absolute;
+    width: 140px;
+    height: 50px;
+    top: 450px;
+    margin-left: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+#buy-btn a{
+    padding: 15px 55px;
+}
+
+.product-contain button:hover{
+    background-color: rgb(208, 208, 208);
+}
+
+#product-name{
+    background-color: white;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#product-price{
+    margin-bottom: 10px;
+    background-color: white;
+    max-width: 100px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+#product-detail{
+    margin-bottom: 10px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 300px;
+}
+
+
+/* ==================== Phần đánh giá================ */
+.comment{
+    display: flex;
+    /* background-color: aqua; */
+    width: 100%;
+    height: 550px;
+    justify-content: center;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+.comment-contain{
+    display: flex;
+    margin-top: 100px;
+    width: 550px;
+    height: 415px;
+    background-color: rgb(234, 234, 234);
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: flex-start;
+    
+}
+
+.comment-contain h3{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.comment-contain ul{
+    margin-left: 20px;
+}
+
+.comment-contain li{
+    margin-bottom: 10px;
+}
+
+.comment-contain input{
+    width: 300px;
+    height: 25px;
+    border: 1px solid black;
+    border-radius: 2px;
+    margin-top: 5px;
+}
+
+.comment-contain textarea{
+    width: 500px;
+    height: 150px;
+    border: 1px solid black;
+    border-radius: 2px;
+    margin-top: 5px;
+}
+
+.comment-contain button{
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 2px;
+    width: 100px;
+    height: 30px;
+    background-color: rgb(125, 125, 125);
+    color: white;
+}
+.comment-contain button:hover{
+    background-color: rgb(152, 152, 152);
+}
+
+/* =========khung bình luận============== */
+.binh-luan{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+}
+
+.binh-luan-contain{
+    display: flex;
+    width: 100%;
+    margin-left: 50px;
+    flex-direction: column;
+    /* background-color: bisque; */
+}
+.binh-luan-contain h3{
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.binh-luan-contain ul{
+    line-height: 25px;
+    margin-bottom: 25px;
+}
+
+.binh-luan-contain #hien-binh-luan{
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 1000px;
+    height: 100px;
+    margin-left: 25px;
+    padding-left: 5px;
+}
